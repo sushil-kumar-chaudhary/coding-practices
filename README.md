@@ -1,1 +1,1 @@
-# coding-practices
+# coding pratice
