@@ -43,10 +43,10 @@ vector < pair < int, int >> getPairsWithSumkN(vector < int > v, int k) {
   int maxx = getMax(v);
   int minn = getMin(v);
   int hash_size = maxx - minn + 1;
-  int hash[hash_size];
+  int hash[hash_size] = { 0 };
   for (int i = 0; i < n; i++) {
     int key = v[i] - minn;
-    hash[key] = 1;
+    hash[key]+= 1;
   }
   vector < pair < int, int >> res;
   for (int i = 0; i < n; i++) {
@@ -54,7 +54,10 @@ vector < pair < int, int >> getPairsWithSumkN(vector < int > v, int k) {
     int first = v[i];
     int mate = k - v[i];
     int keyFormate = mate - minn;
-    if (hash[keyFormate]) {
+    int keyForfirst = first - minn ;
+    if ((first == mate && hash[keyFormate] > 1 ) || ( hash[keyFormate] && hash[keyForfirst]) ) {
+      hash[keyFormate]--;
+      hash[keyForfirst]--;
       res.push_back({
         first,
         mate
