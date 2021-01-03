@@ -11,7 +11,7 @@ void frequencycount(vector<int>& arr,int n)
 
 
 
-//O(n) space and O(n) time
+//O(1) space and O(n) time
 
 void frequencycount(vector<int>& arr,int n)
 { 
