@@ -54,7 +54,7 @@ vector < pair < int, int >> getPairsWithSumkN(vector < int > v, int k) {
     int first = v[i];
     int mate = k - v[i];
     int keyFormate = mate - minn;
-    if (hash[mate - minn]) {
+    if (hash[keyFormate]) {
       res.push_back({
         first,
         mate
