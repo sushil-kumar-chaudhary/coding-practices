@@ -1,0 +1,28 @@
+//O(n) space and O(n) time
+
+void frequencycount(vector<int>& arr,int n)
+{
+    // code here
+    int freq[n];
+    memset(freq,0,sizeof(freq);
+    for (int i = 0; i < n; i++)
+        freq[arr[i]]++;
+}
+
+
+
+//O(n) space and O(n) time
+
+void frequencycount(vector<int>& arr,int n)
+{ 
+    // code here
+    for(int i=0;i<n;i++){
+        arr[i]--;
+    }
+    for(int i=0;i<n;i++){
+        arr[arr[i]%n]+=n;
+    }
+    for(int i=0;i<n;i++){
+        arr[i]/=n;
+    }
+}
